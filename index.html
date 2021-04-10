@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graded Exercise 2</title>
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<div class="scorebox">
+		<span>SCORE: </span>
+		<span id="ingamescore">0</span>
+		<br>
+		<span>LIFE: </span>
+		<span id="ingameHP">3</span>
+	</div>
+	<div id="result" class="restartlabel">
+		<div class="container">
+			<p>GAME OVER</p>
+			<h1 id="finalscore" class="final-score">0</h1>
+			<p>POINTS</p>
+			<h2>Alien Ship: 200pt; -1HP when collide</h2>
+			<h2>Big Asteroid: 100pt; -3HP when collide</h2>
+			<h2>Small Asteroid: 50pt; -2HP when collide</h2>
+			<h2>Laser: 0pt; -1HP when hit</h2>
+			<h2>Use arrow keys to move and mouse to fire missiles</h2>
+			<div>
+				<button id="startbtn" class="btn">RESTART</button>
+			</div>
+		</div>
+	</div>
+	<canvas></canvas>
+	<script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
