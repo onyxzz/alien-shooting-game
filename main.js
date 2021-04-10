@@ -15,6 +15,7 @@ const start_btn = document.querySelector('#startbtn')
 
 let score = 0
 let HP = 3
+let difficulty = 1
 let friction = 0.999999999
 let x = canvas.width / 2 - canvas.width / 50
 let y = canvas.height - canvas.height / 25
@@ -268,6 +269,12 @@ window.addEventListener('click', (event) => {
 
 // Spawn Enemy
 
+function increaseDif() {
+	setInterval(() => {
+		difficulty += 0.05
+	},1000)
+}
+
 function spawnAlienShip() {
 	setInterval(() => {
 		
@@ -296,7 +303,7 @@ function spawnAlienShip() {
 		}
 
 		alienShips.push(new AlienShip(x, y,radius, color, velocity))
-	},4000)
+	},4000 / difficulty)
 }
 
 function spawnLaser() {
@@ -325,7 +332,7 @@ function spawnLaser() {
 				)
 			})
 		})
-	},1000)
+	},1000 / difficulty)
 }
 
 function spawnBigAsteroid() {
@@ -356,7 +363,7 @@ function spawnBigAsteroid() {
 		}
 
 		bigAsteroids.push(new BigAsteroid(x, y,radius, color, velocity))
-	},9000)
+	},9000 / difficulty)
 }
 
 
@@ -388,7 +395,7 @@ function spawnSmallAsteroid() {
 		}
 
 		smallAsteroids.push(new SmallAsteroid(x, y,radius, color, velocity))
-	},3000)
+	},3000 / difficulty)
 }
 
 
@@ -979,6 +986,7 @@ function init() {
 
 	score = 0
 	HP = 3
+	difficulty = 1
 
 	ingamescore.innerHTML = score
 	finalscore.innerHTML = score
@@ -988,6 +996,7 @@ function init() {
 start_btn.addEventListener('click', () => {
 	init()
 	Mechanic()
+	increaseDif()
 	spawnAlienShip()
 	spawnLaser()
 	spawnBigAsteroid()
