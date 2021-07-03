@@ -61,8 +61,8 @@ playerShips.push(
 	new PlayerShip(
 		x,
 		y,
-		canvas.width / 25,
-		canvas.height / 25,
+		canvas.width / 12.5,
+		canvas.height / 12.5,
 		'#41AAC4',
 		velocity
 	)
